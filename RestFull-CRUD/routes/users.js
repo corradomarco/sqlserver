@@ -16,10 +16,39 @@ router.get('/esami', function(req, res, next) {
     
     // Query
     let sqlRequest = new sql.Request();  //Oggetto che serve a creare le query
-    sqlRequest.query('select * from esami', (err, result) => {
+    sqlRequest.query('select * from [cr-unit-attributes]', (err, result) => {
         if (err) console.log(err); // ... error checks
         res.send(result);  //Invio il risultato
     });
+
+  });
+});
+
+router.get('/unit', function(req, res, next) {
+  sql.connect(config, err => {
+    if(err) console.log(err);  // ... error check
+    
+    // Query
+    let sqlRequest = new sql.Request();  //Oggetto che serve a creare le query
+    sqlRequest.query('select Unit from [cr-unit-attributes]', (err, result) => {
+        if (err) console.log(err); // ... error checks
+        res.send(result);  //Invio il risultato
+    });
+    
+  });
+});
+
+router.get('/:unit', function(req, res, next) {
+  sql.connect(config, err => {
+    if(err) console.log(err);  // ... error check
+    
+    // Query
+    let sqlRequest = new sql.Request();  //Oggetto che serve a creare le query
+    sqlRequest.query(`select * from [cr-unit-attributes] where unit = '${req.params.unit}'`, (err, result) => {
+        if (err) console.log(err); // ... error checks
+        res.send(result);  //Invio il risultato
+    });
+    
   });
 });
 
