@@ -1,0 +1,16 @@
+extends layout
+block content
+    ul
+        li
+         a(href="index") nuova unita
+        li 
+         a(href="/") elenco
+    each arr in unita
+        img(src =`/images/${arr.unit}.png`)
+        h1 #{arr.Unit}
+        h1 #{arr.Cost}
+        h1 #{arr.Hit_Speed}
+        h1 #{arr.Speed}
+        h1 #{arr.Range}
+        h1 #{arr.Count}
+

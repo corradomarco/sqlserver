@@ -1,0 +1,12 @@
+extends layout
+block content
+    ul
+        li
+         a(href="index") nuova unita
+        li
+         a(href="/")elenco unita
+    each arr in unita
+        h1
+            a(href = `/unit/${arr.Unit}`) #{arr.Unit}
+             br
+             img(src = `/images/${arr.Unit}.png`)
