@@ -1,6 +1,13 @@
 extends layout
 
 block content
+  p Welcome to #{title}
+  ul
+    li
+        a(href="index") Nuova Unità
+    li
+        a(href="/") Lista Unità
+ 
   h1= title
   each arr in unita
     p Welcome to #{arr.Unit}

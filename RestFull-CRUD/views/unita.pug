@@ -1,4 +1,11 @@
 block content
+  p Welcome to #{title}
+  ul
+    li
+        a(href="index") Nuova Unità
+    li
+        a(href="/") Lista Unità
+
   each arr in unita
     h1 
         a(href = `/unit/${arr.Unit}`) #{arr.Unit}
